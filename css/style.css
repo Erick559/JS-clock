@@ -45,3 +45,16 @@ body {
     transition: all 0.05s;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
+
+.second-hand {
+    background-color: firebrick;
+    height: 3px;
+}
+
+.center-circle {
+    position: absolute;
+    top: 49%;
+    left: 48.5%;
+    border: 6px solid white;
+    border-radius: 50%;
+}
