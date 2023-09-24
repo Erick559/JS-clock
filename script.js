@@ -13,9 +13,19 @@ function setDate() {
     const minutesDegrees = ((minutes / 60) * 360) + 90;
     minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
 
-    const hours = now.getHours()
-    const hoursDegrees = ((hours) * 360) + 90;
+    const hour = now.getHours()
+    const hoursDegrees = ((hour / 12) * 360) + 90;
     hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+
+    if (seconds === 0) {
+        secondHand.style.transitionDuration = '0s';
+        minuteHand.style.transitionDuration = '0s';
+        hourHand.style.transitionDuration = '0s';
+    } else {
+        secondHand.style.transitionDuration = '0.05s';
+        minuteHand.style.transitionDuration = '0.05s';
+        hourHand.style.transitionDuration = '0.05s';
+    }
 }
 
 setInterval(setDate, 1000);
